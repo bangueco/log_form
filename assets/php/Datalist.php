@@ -46,10 +46,7 @@
                         echo '<td>'.$logs['type'].'</td>';
                         echo '<td>'.$logs['timestamp'].'</td>';
                         echo 
-                        '<td>
-                            <a href="">Edit</a> 
-                            <a href="">Delete</a> 
-                        </td>';
+                        '<td><a href="">Delete</a> </td>';
                     echo '</tr>';
                 }
             ?>
