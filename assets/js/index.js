@@ -2,6 +2,9 @@ const firstNameField = document.querySelector("#firstName");
 const lastNameField = document.querySelector("#lastName");
 const errorMsg = document.querySelectorAll(".error");
 
+const inCheckBox = document.querySelector("#inCheckBox");
+const outCheckBox = document.querySelector("#outCheckBox");
+
 const submitButton = document.querySelector("button");
 
 const fieldEmptyCheck = () => {
