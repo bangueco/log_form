@@ -14,8 +14,8 @@
 .log-form-container {
     border: 1px solid black;
     border-radius: 15px;
-    width: 25rem;
-    height: 32.5rem;
+    width: 23rem;
+    height: 28.5rem;
     background-color: bisque;
 }
 
@@ -33,6 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
 }
 
 .basic-information-section > .basic-info-container {
@@ -40,8 +41,7 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 1px;
-    height: 5.5rem;
-    margin-top: 10px;
+    position: relative;
 }
 
 .basic-information-section > .basic-info-container > input[type="text"] {
@@ -69,4 +69,15 @@
     text-decoration: none;
     color: red;
     cursor: pointer;
+}
+
+.invi {
+    display: none;
+}
+
+.error {
+    position: absolute;
+    bottom: 34px;
+    left: 100px;
+    color: red;
 }
