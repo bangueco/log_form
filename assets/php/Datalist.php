@@ -6,21 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Data List</title>
 
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="../css/table.css">
 </head>
 <body>
-    <table border=1>
+    <table border="1">
         <thead>
-            <tr># of Rows</tr>
-            <tr>Name</tr>
-            <tr>Transaction</tr>
-            <tr>Timestamp</tr>
-            <tr>Action</tr>
+            <tr>
+                <th>Number Of Row/s: 100</th>
+                <th>Name</th>
+                <th>Transaction Type</th>
+                <th>Timestamp</th>
+                <th>Action</th>
+            </tr>
         </thead>
         <tbody>
-            <tr>100</tr>
+            <?php
+                $database_connection = new PDO('mysql:host=localhost;dbname=e_logs', 'admin', 'admin');
+
+                $stmt = $database_connection->prepare('SELECT * FROM logs');
+                $stmt->execute();
+
+                $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach($log_data as $logs) {
+                    echo '<tr>';
+                        echo '<td>&nbsp;</td>';
+                        echo '<td>'.$logs['first_name'].' '.$logs['middle_name'].' '.$logs['last_name'].'</td>';
+                        echo '<td>'.$logs['type'].'</td>';
+                        echo '<td>'.$logs['timestamp'].'</td>';
+                        echo 
+                        '<td>
+                            <a href="">Edit</a> 
+                            <a href="">Delete</a> 
+                        </td>';
+                    echo '</tr>';
+                }
+            ?>
         </tbody>
     </table>
 </body>
