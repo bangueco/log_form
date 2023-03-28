@@ -1,0 +1,72 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+.center {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-form-container {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 25rem;
+    height: 32.5rem;
+    background-color: bisque;
+}
+
+.log-form-container > .log-form-title {
+    text-align: center;
+    background-color: red;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    font-size: 30px;
+    padding: 20px;
+    color: white;
+}
+
+.basic-information-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.basic-information-section > .basic-info-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1px;
+    height: 5.5rem;
+    margin-top: 10px;
+}
+
+.basic-information-section > .basic-info-container > input[type="text"] {
+    width: 300px;
+    height: 30px;
+}
+
+.transaction-section {
+    padding: 30px;
+    text-align: center;
+}
+
+.php-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.php-actions > button, a {
+    padding: 8px 12px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: beige;
+    font-size: 15px;
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+}
