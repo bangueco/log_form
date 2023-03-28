@@ -46,7 +46,7 @@
                         echo '<td>'.$logs['type'].'</td>';
                         echo '<td>'.$logs['timestamp'].'</td>';
                         echo 
-                        '<td><a href="">Delete</a> </td>';
+                        '<td><a href="../php/Delete-action.php?id='.$logs['id'].'">Delete</a> </td>';
                     echo '</tr>';
                 }
             ?>
