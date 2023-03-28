@@ -38,7 +38,7 @@
                 </div>
                 <div class="php-actions">
                     <button>Submit Data</button>
-                    <a href="#">View Data</a>
+                    <a href="./assets/php/Datalist.php">View Data</a>
                 </div>
             </form>
         </div>
