@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Prelim Exam - Ivan Gueco</title>
 
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -12,7 +12,7 @@
     <div class="center">
         <div class="log-form-container">
             <div class="log-form-title">Log Form</div>
-            <form action="" class="log-form-forms" method="post">
+            <form action="./assets/php/Insert-action.php" class="log-form-forms" method="post" autocomplete="off">
                 <div class="basic-information-section">
                     <div class="basic-info-container">
                         <label for="firstName">First Name:</label>
@@ -32,9 +32,9 @@
                 <div class="transaction-section">
                     <label for="">Transaction Type: </label>
                     <label for="">In</label>
-                    <input type="checkbox" name="enum_trans_type[]" id="">
+                    <input type="checkbox" name="enum_trans_type[]" id="inCheckBox">
                     <label for="">Out</label>
-                    <input type="checkbox" name="enum_trans_type[]" id="">
+                    <input type="checkbox" name="enum_trans_type[]" id="outCheckBox">
                 </div>
                 <div class="php-actions">
                     <button>Submit Data</button>
