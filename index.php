@@ -17,7 +17,7 @@
                     <div class="basic-info-container">
                         <label for="firstName">First Name:</label>
                         <input type="text" name="first_name" id="firstName">
-                        <p class="error">* This field is required</p>
+                        <p class="error invi">* This field is required</p>
                     </div>
                     <div class="basic-info-container">
                         <label for="middleName">Middle Name:</label>
@@ -26,7 +26,7 @@
                     <div class="basic-info-container">
                         <label for="lastName">Last Name:</label>
                         <input type="text" name="last_name" id="lastName">
-                        <p class="error">* This field is required</p>
+                        <p class="error invi">* This field is required</p>
                     </div>
                 </div>
                 <div class="transaction-section">
