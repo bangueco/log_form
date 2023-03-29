@@ -40,9 +40,18 @@
                 $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach($log_data as $logs) {
+                    $full_name;
+                    if (empty($logs['middle_name']) == true) {
+                        $full_name = $logs['first_name'].' '.$logs['last_name'];
+                    } else {
+                        $full_name = $logs['first_name'].' '.$logs['middle_name'].' '.$logs['last_name'];
+                    }
                     echo '<tr>';
                         echo '<td>&nbsp;</td>';
-                        echo '<td>'.$logs['first_name'].' '.$logs['middle_name'].' '.$logs['last_name'].'</td>';
+                        echo 
+                        '<td>
+                            '.$full_name.'
+                        </td>';
                         echo '<td>'.$logs['type'].'</td>';
                         echo '<td>'.$logs['timestamp'].'</td>';
                         echo 
