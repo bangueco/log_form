@@ -23,6 +23,16 @@ const fieldErrorMsg = () => {
     if (lastNameField.value.length >= 1) errorMsg[1].classList.add("invi");
 }
 
+const checkBoxOutState = () => {
+    if (inCheckBox.checked === true) outCheckBox.disabled = true;
+    if (inCheckBox.checked === false) outCheckBox.disabled = false;
+}
+
+const checkBoxInState = () => {
+    if (outCheckBox.checked === true) inCheckBox.disabled = true;
+    if (outCheckBox.checked === false) inCheckBox.disabled = false;
+}
+
 firstNameField.addEventListener('keyup', () => {
     fieldEmptyCheck();
     fieldErrormsg();
@@ -31,3 +41,6 @@ lastNameField.addEventListener('keyup', () => {
     fieldEmptyCheck();
     fieldErrorMsg();
 });
+
+inCheckBox.addEventListener('click', checkBoxOutState);
+outCheckBox.addEventListener('click', checkBoxInState);
