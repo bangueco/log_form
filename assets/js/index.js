@@ -1,3 +1,4 @@
+const form = document.querySelector("#log_form");
 const firstNameField = document.querySelector("#firstName");
 const lastNameField = document.querySelector("#lastName");
 const errorMsg = document.querySelectorAll(".error");
@@ -16,11 +17,17 @@ const fieldEmptyCheck = () => {
 }
 
 const fieldErrorMsg = () => {
-    if (firstNameField.value.length === 0) errorMsg[0].classList.remove("invi");
-    if (lastNameField.value.length === 0) errorMsg[1].classList.remove("invi");
+    if (firstNameField.value.length <= 0) {
+        errorMsg[0].classList.remove("invi");
+    } else {
+        errorMsg[0].classList.add("invi")
+    }
 
-    if (firstNameField.value.length >= 1) errorMsg[0].classList.add("invi");
-    if (lastNameField.value.length >= 1) errorMsg[1].classList.add("invi");
+    if (lastNameField.value.length <= 0) {
+        errorMsg[1].classList.remove("invi");
+    } else {
+        errorMsg[1].classList.add("invi");
+    }
 }
 
 const checkBoxOutState = () => {
@@ -33,14 +40,16 @@ const checkBoxInState = () => {
     if (outCheckBox.checked === false) inCheckBox.disabled = false;
 }
 
-firstNameField.addEventListener('keyup', () => {
-    fieldEmptyCheck();
-    fieldErrormsg();
-});
-lastNameField.addEventListener('keyup', () => {
-    fieldEmptyCheck();
-    fieldErrorMsg();
-});
+form.addEventListener('submit', log => {
+
+    if (firstNameField.value.length === 0 || lastNameField.value.length === 0) {
+        log.preventDefault();
+        fieldErrorMsg();
+
+        firstNameField.addEventListener('keyup', () => fieldErrorMsg());
+        lastNameField.addEventListener('keyup', () => fieldErrorMsg());
+    }
+})
 
 inCheckBox.addEventListener('click', checkBoxOutState);
 outCheckBox.addEventListener('click', checkBoxInState);
