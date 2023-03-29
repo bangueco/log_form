@@ -12,7 +12,7 @@
     <div class="center">
         <div class="log-form-container">
             <div class="log-form-title">Log Form</div>
-            <form action="./assets/php/Insert-action.php" class="log-form-forms" method="post" autocomplete="off">
+            <form id="log_form" action="./assets/php/Insert-action.php" class="log-form-forms" method="post" autocomplete="off">
                 <div class="basic-information-section">
                     <div class="basic-info-container">
                         <label for="firstName">First Name:</label>
