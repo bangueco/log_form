@@ -50,6 +50,7 @@
 }
 
 .transaction-section {
+    position: relative;
     padding: 30px;
     text-align: center;
 }
@@ -79,5 +80,12 @@
     position: absolute;
     bottom: 34px;
     left: 100px;
+    color: red;
+}
+
+.checkbox-error {
+    position: absolute;
+    top: 50px;
+    left: 90px;
     color: red;
 }

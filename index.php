@@ -35,6 +35,7 @@
                     <input type="checkbox" name="enum_trans_type[]" id="inCheckBox">
                     <label for="">Out</label>
                     <input type="checkbox" name="enum_trans_type[]" id="outCheckBox">
+                    <p class="checkbox-error invi">* Check one of these boxes</p>
                 </div>
                 <div class="php-actions">
                     <button>Submit Data</button>

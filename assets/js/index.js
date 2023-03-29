@@ -2,6 +2,7 @@ const form = document.querySelector("#log_form");
 const firstNameField = document.querySelector("#firstName");
 const lastNameField = document.querySelector("#lastName");
 const errorMsg = document.querySelectorAll(".error");
+const checkBoxErrorMsg = document.querySelector(".checkbox-error");
 
 const inCheckBox = document.querySelector("#inCheckBox");
 const outCheckBox = document.querySelector("#outCheckBox");
@@ -20,6 +21,12 @@ const fieldErrorMsg = () => {
     } else {
         errorMsg[1].classList.add("invi");
     }
+
+    if (inCheckBox.checked === false && outCheckBox.checked === false) {
+        checkBoxErrorMsg.classList.remove("invi");
+    } else {
+        checkBoxErrorMsg.classList.add("invi");
+    }
 }
 
 const checkBoxOutState = () => {
@@ -34,7 +41,7 @@ const checkBoxInState = () => {
 
 form.addEventListener('submit', log => {
 
-    if (firstNameField.value.length === 0 || lastNameField.value.length === 0) {
+    if (firstNameField.value.length === 0 || lastNameField.value.length === 0 || inCheckBox.checked === false && outCheckBox.checked === false) {
         log.preventDefault();
         fieldErrorMsg();
 
