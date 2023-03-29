@@ -32,9 +32,9 @@
                 <div class="transaction-section">
                     <label for="">Transaction Type: </label>
                     <label for="">In</label>
-                    <input type="checkbox" name="enum_trans_type[]" id="inCheckBox">
+                    <input type="checkbox" name="enum_trans_type[]" id="inCheckBox" value="In">
                     <label for="">Out</label>
-                    <input type="checkbox" name="enum_trans_type[]" id="outCheckBox">
+                    <input type="checkbox" name="enum_trans_type[]" id="outCheckBox" value="Out">
                     <p class="checkbox-error invi">* Check one of these boxes</p>
                 </div>
                 <div class="php-actions">

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/table.css">
 </head>
 <body>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Number Of Row/s: 
