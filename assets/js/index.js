@@ -8,14 +8,6 @@ const outCheckBox = document.querySelector("#outCheckBox");
 
 const submitButton = document.querySelector("button");
 
-const fieldEmptyCheck = () => {
-    if (firstNameField.value.length === 0 || lastNameField.value.length === 0) {
-        submitButton.disabled = true;
-    } else if (firstNameField.value.length >= 1 && lastNameField.value.length >= 1) {
-        submitButton.disabled = false;
-    }
-}
-
 const fieldErrorMsg = () => {
     if (firstNameField.value.length <= 0) {
         errorMsg[0].classList.remove("invi");
