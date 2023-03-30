@@ -11,11 +11,17 @@
 <body>
     <div class="center">
         <div class="table-container">
+            <form class="search-container" action="Datalist.php" method="get">
+                <label for="searchTable">Search on Table</label>
+                <input type="search" name="search_table" id="searchTable">
+                <button title="This search only the first name">Search</button>
+                <a href="../../index.php">Return</a>
+            </form>
             <table cellspacing="0">
                 <thead>
                     <tr>
                         <th colspan = "100%">Number Of Row/s: 
-                            <?php 
+                            <?php
                                 $database_connection = new PDO('mysql:host=localhost;dbname=e_logs', 'admin', 'admin');
                                 $stmt = $database_connection->prepare('SELECT * FROM logs');
                                 $stmt->execute();
@@ -36,30 +42,58 @@
                 </thead>
                 <tbody>
                     <?php
+                        $search_result = $_GET['search_table'];
+
                         $database_connection = new PDO('mysql:host=localhost;dbname=e_logs', 'admin', 'admin');
 
-                        $stmt = $database_connection->prepare('SELECT * FROM logs');
-                        $stmt->execute();
+                        if (empty($search_result) == true) {
+                            $stmt = $database_connection->prepare('SELECT * FROM logs');
+                            $stmt->execute();
 
-                        $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                        foreach($log_data as $logs) {
-                            $full_name;
-                            if (empty($logs['middle_name']) == true) {
-                                $full_name = $logs['first_name'].' '.$logs['last_name'];
-                            } else {
-                                $full_name = $logs['first_name'].' '.$logs['middle_name'].' '.$logs['last_name'];
+                            foreach($log_data as $logs) {
+                                $full_name;
+                                if (empty($logs['middle_name']) == true) {
+                                    $full_name = $logs['first_name'].' '.$logs['last_name'];
+                                } else {
+                                    $full_name = $logs['first_name'].' '.$logs['middle_name'].' '.$logs['last_name'];
+                                }
+                                echo '<tr>';
+                                    echo 
+                                    '<td>
+                                        '.$full_name.'
+                                    </td>';
+                                    echo '<td>'.$logs['type'].'</td>';
+                                    echo '<td>'.$logs['timestamp'].'</td>';
+                                    echo 
+                                    '<td><a href="../php/Delete-action.php?id='.$logs['id'].'">Delete</a> </td>';
+                                echo '</tr>';
                             }
-                            echo '<tr>';
-                                echo 
-                                '<td>
-                                    '.$full_name.'
-                                </td>';
-                                echo '<td>'.$logs['type'].'</td>';
-                                echo '<td>'.$logs['timestamp'].'</td>';
-                                echo 
-                                '<td><a href="../php/Delete-action.php?id='.$logs['id'].'">Delete</a> </td>';
-                            echo '</tr>';
+                        } else {
+                            $stmt = $database_connection->prepare("SELECT * FROM logs WHERE first_name = '$search_result'");
+                            $stmt->execute();
+
+                            $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach($log_data as $logs) {
+                                $full_name;
+                                if (empty($logs['middle_name']) == true) {
+                                    $full_name = $logs['first_name'].' '.$logs['last_name'];
+                                } else {
+                                    $full_name = $logs['first_name'].' '.$logs['middle_name'].' '.$logs['last_name'];
+                                }
+                                echo '<tr>';
+                                    echo 
+                                    '<td>
+                                        '.$full_name.'
+                                    </td>';
+                                    echo '<td>'.$logs['type'].'</td>';
+                                    echo '<td>'.$logs['timestamp'].'</td>';
+                                    echo 
+                                    '<td><a href="../php/Delete-action.php?id='.$logs['id'].'">Delete</a> </td>';
+                                echo '</tr>';
+                            }
                         }
                     ?>
                 </tbody>
