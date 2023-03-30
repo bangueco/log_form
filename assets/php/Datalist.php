@@ -9,57 +9,62 @@
     <link rel="stylesheet" href="../css/table.css">
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>Number Of Row/s: 
-                    <?php 
+    <div class="center">
+        <div class="table-container">
+            <table cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan = "100%">Number Of Row/s: 
+                            <?php 
+                                $database_connection = new PDO('mysql:host=localhost;dbname=e_logs', 'admin', 'admin');
+                                $stmt = $database_connection->prepare('SELECT * FROM logs');
+                                $stmt->execute();
+                                $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                $rowcount = 0;
+                                foreach($log_data as $logs) {
+                                    $rowcount++;
+                                }
+                                echo '<span>'.$rowcount.'</span>';
+                            ?></th>
+                    </tr>
+                    <tr class="log-infos">
+                        <th>Name</th>
+                        <th>Transaction Type</th>
+                        <th>Timestamp</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
                         $database_connection = new PDO('mysql:host=localhost;dbname=e_logs', 'admin', 'admin');
+
                         $stmt = $database_connection->prepare('SELECT * FROM logs');
                         $stmt->execute();
+
                         $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        $rowcount = 0;
+
                         foreach($log_data as $logs) {
-                            $rowcount++;
+                            $full_name;
+                            if (empty($logs['middle_name']) == true) {
+                                $full_name = $logs['first_name'].' '.$logs['last_name'];
+                            } else {
+                                $full_name = $logs['first_name'].' '.$logs['middle_name'].' '.$logs['last_name'];
+                            }
+                            echo '<tr>';
+                                echo 
+                                '<td>
+                                    '.$full_name.'
+                                </td>';
+                                echo '<td>'.$logs['type'].'</td>';
+                                echo '<td>'.$logs['timestamp'].'</td>';
+                                echo 
+                                '<td><a href="../php/Delete-action.php?id='.$logs['id'].'">Delete</a> </td>';
+                            echo '</tr>';
                         }
-                        echo '<span>'.$rowcount.'</span>';
-                    ?></th>
-                <th>Name</th>
-                <th>Transaction Type</th>
-                <th>Timestamp</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                $database_connection = new PDO('mysql:host=localhost;dbname=e_logs', 'admin', 'admin');
-
-                $stmt = $database_connection->prepare('SELECT * FROM logs');
-                $stmt->execute();
-
-                $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                foreach($log_data as $logs) {
-                    $full_name;
-                    if (empty($logs['middle_name']) == true) {
-                        $full_name = $logs['first_name'].' '.$logs['last_name'];
-                    } else {
-                        $full_name = $logs['first_name'].' '.$logs['middle_name'].' '.$logs['last_name'];
-                    }
-                    echo '<tr>';
-                        echo '<td>&nbsp;</td>';
-                        echo 
-                        '<td>
-                            '.$full_name.'
-                        </td>';
-                        echo '<td>'.$logs['type'].'</td>';
-                        echo '<td>'.$logs['timestamp'].'</td>';
-                        echo 
-                        '<td><a href="../php/Delete-action.php?id='.$logs['id'].'">Delete</a> </td>';
-                    echo '</tr>';
-                }
-            ?>
-        </tbody>
-    </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
