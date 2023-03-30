@@ -39,6 +39,10 @@ const checkBoxInState = () => {
     if (outCheckBox.checked === false) inCheckBox.disabled = false;
 }
 
+const isChecked = () => {
+    if (inCheckBox.checked === true || outCheckBox.checked === true) checkBoxErrorMsg.classList.add("invi");
+}
+
 form.addEventListener('submit', log => {
 
     if (firstNameField.value.length === 0 || lastNameField.value.length === 0 || inCheckBox.checked === false && outCheckBox.checked === false) {
@@ -47,6 +51,8 @@ form.addEventListener('submit', log => {
 
         firstNameField.addEventListener('keyup', () => fieldErrorMsg());
         lastNameField.addEventListener('keyup', () => fieldErrorMsg());
+        inCheckBox.addEventListener('click', isChecked);
+        outCheckBox.addEventListener('click', isChecked);
     }
 })
 
