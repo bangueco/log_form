@@ -39,7 +39,7 @@
                 </div>
                 <div class="php-actions">
                     <button>Submit Data</button>
-                    <a href="./assets/php/Datalist.php">View Data</a>
+                    <a href="./assets/php/Datalist.php?search_table=">View Data</a>
                 </div>
             </form>
         </div>
