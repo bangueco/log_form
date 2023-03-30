@@ -6,4 +6,4 @@ $connect = new PDO("mysql:host=localhost;dbname=e_logs", 'admin', 'admin');
 $stmt = $connect->prepare("DELETE FROM logs WHERE id=$__userid");
 $stmt->execute();
 
-header("location: ../php/Datalist.php");
+header("location: ../php/Datalist.php?search_table=");
