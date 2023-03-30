@@ -14,7 +14,7 @@
             <label for="searchTable">Search on Table</label>
             <input type="search" name="search_table" id="searchTable">
             <button title="This search only the first name">Search</button>
-            <a href="../../index.php">Return</a>
+            <a class="button" href="../../index.php">Return</a>
         </form>
         <div class="table-container">
             <table cellspacing="0">

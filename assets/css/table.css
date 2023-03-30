@@ -86,3 +86,16 @@ table > tbody > tr > td > a {
     text-decoration: none;
     color: white;
 }
+
+.search-container > button, .button {
+    padding: 8px 12px;
+    background-color: rgb(239, 239, 229);
+    border: 1px solid black;
+    border-radius: 1px;
+    color: black;
+    cursor: pointer;
+}
+
+.button {
+    text-decoration: none;
+}
