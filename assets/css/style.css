@@ -92,3 +92,11 @@
     left: 90px;
     color: red;
 }
+
+footer {
+    position: fixed;
+    bottom: 40px;
+    text-align: center;
+    width: 100vw;
+    font-size: 1.2rem;
+}

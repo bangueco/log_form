@@ -47,6 +47,9 @@
             </form>
         </div>
     </div>
+    <footer>
+        Justine Ivan Gueco - BSIT 202
+    </footer>
     <script src="./assets/js/index.js"></script>
 </body>
 </html>
