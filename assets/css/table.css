@@ -1,3 +1,6 @@
+:root {
+    font-family: 'Open Sans', sans-serif;
+}
 *
 {
     padding: 0;
@@ -94,6 +97,7 @@ table > tbody > tr > td > a {
     border-radius: 1px;
     color: black;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
 .button {

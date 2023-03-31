@@ -1,3 +1,8 @@
+:root {
+    background-color: rgb(211, 245, 234);
+    font-family: 'Open Sans', sans-serif;
+}
+
 *
 {
     padding: 0;
@@ -13,17 +18,15 @@
 
 .log-form-container {
     border: 1px solid black;
-    border-radius: 15px;
     width: 23rem;
     height: 28.5rem;
     background-color: bisque;
+    box-shadow: 0px 0px 10px 3px rgb(150, 150, 150);
 }
 
 .log-form-container > .log-form-title {
     text-align: center;
     background-color: red;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
     font-size: 30px;
     padding: 20px;
     color: white;
