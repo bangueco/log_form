@@ -13,7 +13,7 @@
         <form class="search-container" action="Datalist.php" method="get">
             <label for="searchTable">Search on Table</label>
             <input type="search" name="search_table" id="searchTable">
-            <button title="This search only the first name">Search</button>
+            <button title="This search only the last name">Search</button>
             <a class="button" href="../../index.php">Return</a>
         </form>
         <div class="table-container">
@@ -71,7 +71,7 @@
                                 echo '</tr>';
                             }
                         } else {
-                            $stmt = $database_connection->prepare("SELECT * FROM logs WHERE first_name = '$search_result'");
+                            $stmt = $database_connection->prepare("SELECT * FROM logs WHERE last_name = '$search_result'");
                             $stmt->execute();
 
                             $log_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
