@@ -1,5 +1,6 @@
 :root {
     font-family: 'Open Sans', sans-serif;
+    background-color: black;
 }
 *
 {
@@ -21,6 +22,10 @@
     padding: 10px;
 }
 
+.search-container > label {
+    color: white;
+}
+
 .table-container {
     max-height: 400px;
     overflow: scroll;
@@ -32,7 +37,7 @@ table {
 }
 
 table > thead > tr > th[colspan="100%"] {
-    background-color: rgb(252, 249, 119);
+    background-color: rgb(181, 26, 233);
     padding: 10px;
     border-bottom: 1px solid black;
     font-size: 2rem;
@@ -91,13 +96,19 @@ table > tbody > tr > td > a {
 }
 
 .search-container > button, .button {
-    padding: 8px 12px;
-    background-color: rgb(239, 239, 229);
-    border: 1px solid black;
-    border-radius: 1px;
-    color: black;
-    cursor: pointer;
+    padding: 7px 12px;
+    border: 2px solid rgb(181, 26, 233);
+    border-radius: 10px;
+    background-color: rgb(33, 33, 33);
     font-size: 0.8rem;
+    text-decoration: none;
+    color: rgb(181, 26, 233);
+    cursor: pointer;
+}
+
+.search-container > button:hover, .button:hover {
+    background-color: rgb(181, 26, 233);
+    color: rgb(33, 33, 33);
 }
 
 .button {
