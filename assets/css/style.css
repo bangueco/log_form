@@ -1,5 +1,5 @@
 :root {
-    background-color: rgb(211, 245, 234);
+    background-color: rgb(5, 5, 5);
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -17,19 +17,19 @@
 }
 
 .log-form-container {
-    border: 1px solid black;
+    border: 2px solid rgb(181, 26, 233);
     width: 23rem;
     height: 28.5rem;
-    background-color: bisque;
-    box-shadow: 0px 0px 10px 3px rgb(150, 150, 150);
+    background-color: rgb(33, 33, 33);
 }
 
 .log-form-container > .log-form-title {
     text-align: center;
-    background-color: red;
+    background-color: rgb(181, 26, 233);
     font-size: 30px;
-    padding: 20px;
+    padding: 30px;
     color: white;
+    text-transform: uppercase;
 }
 
 .basic-information-section {
@@ -47,15 +47,32 @@
     position: relative;
 }
 
+.basic-information-section > .basic-info-container > label {
+    color: rgb(183, 183, 183);
+}
+
 .basic-information-section > .basic-info-container > input[type="text"] {
     width: 300px;
     height: 30px;
+    background-color: rgb(33, 33, 33);
+    border: 1px solid rgb(66, 63, 63);
+    border-radius: 10px;
+    color: rgb(183, 183, 183);
+}
+
+.basic-information-section > .basic-info-container > input[type="text"]:focus {
+    border: 2px solid rgb(181, 26, 233);
+    outline: none;
 }
 
 .transaction-section {
     position: relative;
     padding: 30px;
     text-align: center;
+}
+
+.transaction-section > label {
+    color: rgb(183, 183, 183);
 }
 
 .php-actions {
@@ -65,14 +82,19 @@
 }
 
 .php-actions > button, a {
-    padding: 8px 12px;
-    border: 1px solid black;
-    border-radius: 3px;
-    background-color: beige;
-    font-size: 15px;
+    padding: 10px 15px;
+    border: 2px solid rgb(181, 26, 233);
+    border-radius: 10px;
+    background-color: rgb(33, 33, 33);
+    font-size: 1rem;
     text-decoration: none;
-    color: red;
+    color: rgb(181, 26, 233);
     cursor: pointer;
+}
+
+.php-actions > button:hover, a:hover {
+    background-color: rgb(181, 26, 233);
+    color: rgb(33, 33, 33);
 }
 
 .invi {
